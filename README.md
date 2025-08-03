@@ -17,9 +17,9 @@ A production-ready monitoring stack for infrastructure and applications, featuri
 - Docker Compose 2.2+
 - 2GB RAM (minimum)
 
-### Installation
 
- Configuration
+
+### Configuration
 1. Prometheus Targets
 Edit prometheus/prometheus.yml to add scrape targets:
 
