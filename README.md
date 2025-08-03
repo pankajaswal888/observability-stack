@@ -18,10 +18,6 @@ A production-ready monitoring stack for infrastructure and applications, featuri
 - 2GB RAM (minimum)
 
 ### Installation
-```bash
-git clone https://github.com/pankajaswal888/observability-stack.git
-cd observability-stack
-docker-compose up -d
 
  Configuration
 1. Prometheus Targets
