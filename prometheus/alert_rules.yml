@@ -1,0 +1,22 @@
+groups:
+- name: instance-down
+  rules:
+  - alert: InstanceDown
+    expr: up == 0
+    for: 5m
+    labels:
+      severity: 'critical'
+    annotations:
+      summary: "Instance {{ $labels.instance }} down"
+      description: "{{ $labels.job }} on {{ $labels.instance }} has been down for 5 minutes."
+
+- name: high-cpu
+  rules:
+  - alert: HighCPU
+    expr: 100 - (avg by(instance)(irate(node_cpu_seconds_total{mode="idle"}[5m])) * 100 > 80
+    for: 10m
+    labels:
+      severity: 'warning'
+    annotations:
+      summary: "High CPU on {{ $labels.instance }}"
+      description: "CPU usage >80% for 10 minutes (current: {{ $value }}%)"
